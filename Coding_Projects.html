@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Coding case studies by Taylor Starling: Awesome Inc virtual tour, timeline page, Sanity CMS work, and more."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Coding Projects — Taylor Starling" />
+    <meta
+      property="og:description"
+      content="Awesome Inc virtual tour, 15-year timeline, Sanity CMS banners, and coding practice examples."
+    />
+    <meta
+      property="og:url"
+      content="https://taystarlingtech.neocities.org/Coding_Projects.html"
+    />
+    <meta
+      property="og:image"
+      content="https://taystarlingtech.neocities.org/images/greenflowerstech.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>Coding Projects — Taylor Starling</title>
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/png" href="/images/GreenTea.png" />
+  </head>
+
+  <body>
+    <nav class="sidenav" aria-label="Primary">
+      <p class="nav-brand">Taylor Starling</p>
+      <a href="/index.html">Home</a>
+      <a href="/What_Is_ICT.html">What is ICT?</a>
+      <a href="/Coding_Projects.html" aria-current="page">Coding Projects</a>
+      <a href="/Data_Analysis_Projects.html">Data Analysis Projects</a>
+      <a href="/DevOps_Projects.html">DevOps Projects</a>
+      <a href="/Contact.html">Contact</a>
+    </nav>
+
+    <main class="main">
+      <h1>Coding Projects</h1>
+      <p class="tagline">Case studies first, then language practice links.</p>
+
+      <article class="card">
+        <h2>Awesome Inc workspace virtual tour</h2>
+        <p class="stack">
+          <span>Pannellum</span>
+          <span>JavaScript</span>
+          <span>Gatsby</span>
+          <span>360° panorama</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Internship project at Awesome Inc — the team
+          wanted a virtual 3D-style tour of the coworking space for visitors
+          who could not visit in person.
+        </p>
+        <p>
+          <strong>What I did:</strong> Built a multi-scene panoramic tour with
+          Pannellum, wired scene-to-scene navigation (coworking, hallway,
+          kitchen, and more), and configured hotspots so users can click
+          doorways to move between spaces.
+        </p>
+        <p>
+          <strong>Outcome:</strong> A live Netlify preview reviewers can drag
+          through in the browser, plus a pull request on Awesome Inc’s Gatsby
+          site for integration.
+        </p>
+        <p>
+          <a class="cta" href="https://pannellum-test--ainc-gatsby-sanity.netlify.app/workspace/tour/">Live demo</a>
+          <a class="cta cta-secondary" href="https://github.com/ainc/ainc-gatsby-sanity/pull/579">Pull request</a>
+        </p>
+
+        <figure>
+          <a href="https://pannellum-test--ainc-gatsby-sanity.netlify.app/workspace/tour/">
+            <img
+              src="/images/ainc_Pannellum_screenshot.png"
+              alt="Screenshot of the Awesome Inc workspace virtual tour built with Pannellum"
+              class="responsive"
+            />
+          </a>
+          <figcaption>
+            Workspace virtual tour — click to open the live demo in a new tab.
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="card" id="ainc-timeline">
+        <h2>Awesome Inc 15-year timeline</h2>
+        <p class="stack">
+          <span>Gatsby</span>
+          <span>React</span>
+          <span>Sanity CMS</span>
+          <span>SCSS</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Internship project for Awesome Inc’s site —
+          a public timeline telling the organization’s history from APAX
+          Software through Awesome Inc U, Fellowship, and the Awesome Fund.
+        </p>
+        <p>
+          <strong>What I did:</strong> Built the timeline page layout and
+          milestone presentation so visitors can scan key dates and stories
+          (founding, 5 Across, KEHOF, bootcamp, and more).
+        </p>
+        <p>
+          <strong>Outcome:</strong> Merged and live on the public site at
+          <a href="https://awesomeinc.org/timeline/">awesomeinc.org/timeline</a>.
+        </p>
+        <p>
+          <a class="cta" href="https://awesomeinc.org/timeline/">Live site</a>
+          <a class="cta cta-secondary" href="https://github.com/ainc/ainc-gatsby-sanity/pull/580">Pull request</a>
+        </p>
+        <figure>
+          <a href="https://awesomeinc.org/timeline/">
+            <img
+              src="/images/timelinesnip.png"
+              alt="Key Milestones on the live Awesome Inc timeline, showing APAX Software Founded in 2007"
+              class="responsive"
+            />
+          </a>
+          <figcaption>
+            Live timeline — click to open awesomeinc.org/timeline.
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="card">
+        <h2>Editable site banner (Sanity Studio)</h2>
+        <p class="stack">
+          <span>Sanity CMS</span>
+          <span>Gatsby</span>
+          <span>Content modeling</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Internship work on Awesome Inc’s Gatsby +
+          Sanity site. Marketing needed to change the header banner without
+          waiting on a developer.
+        </p>
+        <p>
+          <strong>What I did:</strong> Added a banner document in Sanity Studio
+          and connected it to the Gatsby site so the banner content is edited
+          in the CMS and shown on the public pages.
+        </p>
+        <p>
+          <strong>Outcome:</strong> This change is merged and live on the
+          production site. Sanity Studio stays internal, so the screenshots
+          below show the public banner and the editor fields.
+        </p>
+        <p>
+          <a class="cta" href="https://www.awesomeinc.org/">Live site</a>
+          <a class="cta cta-secondary" href="https://github.com/ainc/ainc-gatsby-sanity/pull/586">Pull request</a>
+        </p>
+        <div class="gallery">
+          <figure>
+            <img
+              src="/images/BannerSnip.png"
+              alt="Header banner on the Awesome Inc website"
+              class="responsive"
+            />
+            <figcaption>Public banner</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/studioCMSBanner.png"
+              alt="Sanity Studio fields used to edit the site banner"
+              class="responsive"
+            />
+            <figcaption>Sanity Studio editor</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card" id="top-5">
+        <h2>Top 5 scorecard</h2>
+        <p class="stack">
+          <span>React</span>
+          <span>TypeScript</span>
+          <span>Supabase</span>
+          <span>AG Grid</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Awesome Inc ran the Top 5 weekday challenge
+          in a Google Sheet. People needed a board they could check off, with
+          scoring, streaks, and roles so only the right person edits a row.
+        </p>
+        <p>
+          <strong>What I did:</strong> Built a Vite + React app with Google
+          sign-in, Postgres behind Supabase (row-level security), pages for
+          My week, Dashboard, Leaderboard, Streaks, and Admin, plus CSV import
+          from the old sheet. Signed-out visitors can read the board; members
+          edit their own tasks.
+        </p>
+        <p>
+          <strong>Outcome:</strong> Live at
+          <a href="https://top-5-web-app.netlify.app/">top-5-web-app.netlify.app</a>.
+          Checking all five tasks turns on the Top 5 bonus; the database
+          enforces who can write.
+        </p>
+        <p>
+          <a class="cta" href="https://top-5-web-app.netlify.app/">Live site</a>
+        </p>
+        <figure>
+          <a href="https://top-5-web-app.netlify.app/">
+            <img
+              src="/images/top5snip.png"
+              alt="Top 5 My week board with Monday through Friday task columns, scoring, and Google sign-in"
+              class="responsive"
+            />
+          </a>
+          <figcaption>
+            My week board — click to open the live app.
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="card">
+        <h2>A Midsummer Night’s Dream</h2>
+        <p class="stack">
+          <span>Ren’Py</span>
+          <span>Python</span>
+          <span>Interactive fiction</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Personal creative coding project — a playable
+          visual novel adaptation built in Ren’Py.
+        </p>
+        <p>
+          <strong>What I did:</strong> Structured scenes and dialogue, wired
+          branching choices, and packaged a build for play in-browser via itch.io.
+        </p>
+        <p>
+          <strong>Outcome:</strong> A complete playable demo with source available
+          for review.
+        </p>
+        <p>
+          <a class="cta" href="https://github.com/taystarlingtech/A-Midsummer-Nights-Dream">Source</a>
+          <a class="cta cta-secondary" href="https://itch.io/embed-upload/17731059?color=333333">Play embed</a>
+        </p>
+
+        <div class="game-container">
+          <iframe
+            src="https://itch.io/embed-upload/17731059?color=333333"
+            title="A Midsummer Night’s Dream — playable embed"
+            allow="fullscreen; autoplay; encrypted-media"
+            allowfullscreen
+            loading="eager"
+            width="100%"
+            height="100%">
+          </iframe>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Weather app (FIO project)</h2>
+        <p class="stack">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Weather API</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Awesome Inc FIO project — build a front-end
+          weather experience against a public forecast API.
+        </p>
+        <p>
+          <strong>What I did:</strong> Laid out the UI, fetched and displayed
+          forecast data, and hosted a live demo on GitHub Pages.
+        </p>
+        <p>
+          <strong>Outcome:</strong> A working weather app reviewers can open in
+          the browser.
+        </p>
+        <p>
+          <a class="cta" href="https://taystarlingtech.github.io/Awesome-Inc-FIO-Project/">Live demo</a>
+          <a class="cta cta-secondary" href="https://github.com/taystarlingtech/Awesome-Inc-FIO-Project">Source</a>
+        </p>
+        <figure>
+          <img
+            src="/images/FIO_App_Snap.png"
+            alt="Screenshot of the FIO weather app interface"
+            class="responsive"
+          />
+          <figcaption>FIO weather app UI</figcaption>
+        </figure>
+      </article>
+
+      <article class="card" id="it-health-report">
+        <h2>
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Powershell/Local%20IT%20Health%20Report">Local IT health report</a>
+        </h2>
+        <p class="stack">
+          <span>PowerShell</span>
+          <span>CIM</span>
+          <span>Windows Event Log</span>
+          <span>CSV</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Other PowerShell in this repo talks to a
+          file share, SharePoint, or WSUS. This one runs on any Windows PC —
+          the “how would you check a box quickly?” answer for ICT work.
+        </p>
+        <p>
+          <strong>What I did:</strong> Collect machine and OS facts, local disk
+          free space, automatic services that are stopped, and recent
+          Application/System errors. Write UTF-8 CSV and a simple HTML summary
+          next to the script.
+        </p>
+        <p>
+          <strong>Outcome:</strong> A report you can open in Excel or a browser
+          and schedule with Task Scheduler. SharePoint, NTFS, and WSUS scripts
+          stay in the same folder as environment-specific jobs.
+        </p>
+        <p>
+          <a class="cta" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Powershell/Local%20IT%20Health%20Report">Source</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples">
+            Also practiced
+          </a>
+        </h2>
+        <p>Smaller language and tooling exercises (not full case studies).</p>
+        <ul class="project-list">
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/HTML">HTML</a>
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Javascript/">JavaScript</a>
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Node%20JS">Node.js</a>
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Powershell">PowerShell</a>
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python">Python</a>
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Ruby">Ruby</a>
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/SQL">SQL</a>
+          </li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Taylor Starling ·
+        <a href="https://github.com/taystarlingtech">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/taystarlingtech">LinkedIn</a> ·
+        <a href="/Contact.html">Contact</a>
+      </p>
+    </footer>
+  </body>
+</html>

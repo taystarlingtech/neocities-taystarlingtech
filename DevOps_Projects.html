@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevOps projects by Taylor Starling: Jenkins, Terraform, AWS VPC, VPN, Prometheus, Fargate, and GitHub Actions OIDC."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DevOps Projects — Taylor Starling" />
+    <meta
+      property="og:description"
+      content="Hands-on AWS, CI/CD, and infrastructure projects: Jenkins, Terraform, VPC, VPN, Prometheus, and GitHub Actions."
+    />
+    <meta
+      property="og:url"
+      content="https://taystarlingtech.neocities.org/DevOps_Projects.html"
+    />
+    <meta
+      property="og:image"
+      content="https://taystarlingtech.neocities.org/images/greenflowerstech.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>DevOps Projects — Taylor Starling</title>
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/png" href="/images/GreenTea.png" />
+  </head>
+
+  <body>
+    <nav class="sidenav" aria-label="Primary">
+      <p class="nav-brand">Taylor Starling</p>
+      <a href="/index.html">Home</a>
+      <a href="/What_Is_ICT.html">What is ICT?</a>
+      <a href="/Coding_Projects.html">Coding Projects</a>
+      <a href="/Data_Analysis_Projects.html">Data Analysis Projects</a>
+      <a href="/DevOps_Projects.html" aria-current="page">DevOps Projects</a>
+      <a href="/Contact.html">Contact</a>
+    </nav>
+
+    <main class="main">
+      <h1>DevOps Projects</h1>
+      <p class="tagline">Jenkins, Terraform, AWS networking, observability, and CI/CD.</p>
+
+      <p>
+        Numbered hands-on projects covering CI/CD, infrastructure as code, AWS
+        networking, VPN, observability, and container platforms. Each tile lists
+        the tools, what gets provisioned, and links to source plus a walkthrough.
+      </p>
+
+      <div class="tile-grid">
+        <article class="card tile-card">
+          <p class="tile-num">01</p>
+          <h2>Jenkins HA on AWS</h2>
+          <p class="stack">
+            <span>Jenkins</span>
+            <span>Packer</span>
+            <span>Ansible</span>
+            <span>Terraform</span>
+          </p>
+          <p>
+            Highly available Jenkins on AWS with Packer AMIs, Ansible, Terraform,
+            and an autoscaling group.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/01-jenkins-setup">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/jenkins-autoscaling-setup/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">02</p>
+          <h2>Consul service discovery</h2>
+          <p class="stack">
+            <span>Consul</span>
+            <span>Nginx</span>
+            <span>Terraform</span>
+            <span>Ansible</span>
+          </p>
+          <p>
+            Service discovery and Nginx load balancing with Consul, then automate
+            the instances with Terraform and Ansible.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/02-consul-sevice-discovery">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/service-discovery-example/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">03</p>
+          <h2>Scalable Java app on AWS</h2>
+          <p class="stack">
+            <span>Jenkins</span>
+            <span>Terraform</span>
+            <span>ALB</span>
+            <span>RDS</span>
+          </p>
+          <p>
+            Packer AMI plus Terraform for ALB, autoscaling, Secrets Manager, and
+            MySQL RDS — Spring PetClinic as the app.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/03-scalable-java-app">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/deploy-java-applications-aws-autoscaling/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">04</p>
+          <h2>Prometheus stack</h2>
+          <p class="stack">
+            <span>Prometheus</span>
+            <span>Docker Compose</span>
+            <span>Alertmanager</span>
+            <span>Grafana</span>
+          </p>
+          <p>
+            Observability stack with Docker Compose: Prometheus, Alertmanager,
+            and related exporters.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/04-prometheus-observability-stack">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/setup-prometheus-using-docker/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">05</p>
+          <h2>AWS VPC design &amp; Terraform</h2>
+          <p class="stack">
+            <span>AWS VPC</span>
+            <span>Terraform</span>
+            <span>Subnets</span>
+            <span>NACLs</span>
+          </p>
+          <p>
+            Design a multi-tier VPC (public, app, DB, management, platform), then
+            automate it with Terraform modules.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/05-aws-vpc-design-and-automation">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/aws-vpc-design/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">06</p>
+          <h2>AWS Client VPN</h2>
+          <p class="stack">
+            <span>AWS VPN</span>
+            <span>mTLS</span>
+            <span>EasyRSA</span>
+          </p>
+          <p>
+            Client-to-site VPN into a VPC with mutual TLS and certificates from
+            EasyRSA.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/06-aws-client-vpn-setup">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/aws-client-vpn/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">07</p>
+          <h2>Pritunl VPN</h2>
+          <p class="stack">
+            <span>Pritunl</span>
+            <span>OpenVPN</span>
+            <span>EC2</span>
+          </p>
+          <p>
+            Install Pritunl on EC2, create VPN users, and connect with a VPN
+            client.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/07-pritunl-vpn-setup">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/setup-pritunl-vpn-on-ec2/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">08</p>
+          <h2>Fargate app deployment</h2>
+          <p class="stack">
+            <span>EKS</span>
+            <span>Fargate</span>
+            <span>Helm</span>
+            <span>eksctl</span>
+          </p>
+          <p>
+            Private EKS cluster with Fargate profiles, then deploy an app with
+            Helm.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/08-fargate-app-deployment">Source</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">09</p>
+          <h2>GitHub Actions OIDC → AWS</h2>
+          <p class="stack">
+            <span>GitHub Actions</span>
+            <span>OIDC</span>
+            <span>IAM</span>
+          </p>
+          <p>
+            Keyless AWS access from GitHub Actions using OIDC instead of long-lived
+            access keys.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/09-github-action-oidc-aws">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/github-actions-oidc-aws/">Walkthrough</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">10</p>
+          <h2>Route 53 private hosted zone</h2>
+          <p class="stack">
+            <span>Route 53</span>
+            <span>DNS</span>
+            <span>VPC</span>
+          </p>
+          <p>
+            Private DNS for resources inside a VPC using a Route 53 private hosted
+            zone.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/techiescamp/devops-projects/tree/main/10-route53-private-hosted-zone">Source</a>
+            <a class="cta cta-secondary" href="https://devopscube.com/route53-private-hosted-zone/">Walkthrough</a>
+          </p>
+        </article>
+      </div>
+
+      <h2>Also in the repo</h2>
+      <ul class="project-list">
+        <li>
+          <a href="https://github.com/techiescamp/devops-projects/tree/main/generic-infra-code">generic-infra-code</a>
+          — shared Terraform and Ansible snippets used across these projects.
+        </li>
+        <li>
+          <a href="https://github.com/techiescamp/devops-projects/tree/main/platform-tools">platform-tools</a>
+          — supporting bits such as AWS AMI notes.
+        </li>
+      </ul>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Taylor Starling ·
+        <a href="https://github.com/taystarlingtech">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/taystarlingtech">LinkedIn</a> ·
+        <a href="/Contact.html">Contact</a>
+      </p>
+    </footer>
+  </body>
+</html>

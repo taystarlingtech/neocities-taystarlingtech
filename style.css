@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --bg: #0d1a0d;
+  --bg-elevated: #142814;
+  --bg-hover: #1c3a1c;
+  --border: #1f3d1f;
+  --text: #e3f5e3;
+  --muted: #b7d4b7;
+  --accent: #8fd98f;
+  --accent-strong: #c8f5c8;
+  --link: #7ecbff;
+  --nav-width: 220px;
+  --radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base page styling */
+body {
+  background-color: #0d1a0d; /* deep forest green */
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #163316 0%, transparent 55%),
+    var(--bg);
+  color: #e3f5e3; /* soft light green */
+  font-family: "IBM Plex Sans", Verdana, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: Outfit, Verdana, sans-serif;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0 0 0.4rem; }
+h2 { font-size: 1.35rem; margin: 1.6rem 0 0.6rem; }
+
+h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+p { margin: 0 0 1rem; max-width: 62ch; color: var(--muted); }
+
+a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+
+a:hover { color: #fff; }
+
+.nav-brand {
+  margin: 0 4px 10px;
+  padding: 4px 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-family: Outfit, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  max-width: none;
+}
+
+.cta {
+  display: inline-block;
+  margin: 0 0.5rem 0.75rem 0;
+  padding: 0.55rem 0.95rem;
+  border-radius: 8px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--accent-strong);
+  font-family: Outfit, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta:hover {
+  color: #fff;
+  background: #234723;
+}
+
+.cta-secondary {
+  background: transparent;
+}
+
+/* Sidebar navigation (desktop) */
+.sidenav {
+  width: var(--nav-width);
+  position: fixed;
+  z-index: 1000;
+  top: 16px;
+  left: 12px;
+  background: #142814; /* dark muted green */
+  overflow-x: hidden;
+  padding: 14px 10px;
+  border-radius: var(--radius);
+  border: 1px solid #1f3d1f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.sidenav a {
+  padding: 10px 12px;
+  margin: 2px 0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #a8e6a8; /* accessible green */
+  display: block;
+  font-weight: 600;
+  font-family: Outfit, sans-serif;
+  line-height: 1.3;
+  border-radius: 8px;
+}
+
+.sidenav a:hover,
+.sidenav a:focus-visible {
+  color: #ffffff; /* high contrast */
+  background-color: #1c3a1c;
+  outline: none;
+}
+
+.sidenav a[aria-current="page"] {
+  background: var(--bg-hover);
+  color: var(--accent-strong);
+}
+
+/* Main content area */
+.main {
+  margin-left: calc(var(--nav-width) + 28px); /* space for sidebar */
+  margin-top: 24px;
+  padding: 24px 28px 64px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #e3f5e3;
+  width: auto;
+  max-width: 920px;
+  min-height: 100vh; /* ensures content doesn't collapse */
+}
+
+/* Replace WordPress block behavior */
+.content-block {
+  width: 100%;
+  max-width: none;
+  margin: 1.5rem 0; /* increased spacing so links don't hide */
+}
+
+/* Responsive images */
+.responsive {
+  max-width: min(100%, 640px);
+  height: auto;
+  display: block;
+  margin: 1.25rem 0;
+  border-radius: 12px;
+  border: 2px solid #1f3d1f;
+}
+
+/* Responsive iframe wrapper */
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;      /* centers nicely */
+  height: 500px;         /* FIXED height so it doesn't push content down */
+  margin: 20px 0;        /* sits with the text column */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid #1f3d1f;
+}
+
+/* Make iframe fill the container */
+.game-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Optional extras — only apply if you add these classes in HTML later */
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  margin: 1rem 0;
+  max-width: none;
+}
+
+.card h2 { margin-top: 0; }
+
+.card .responsive,
+.card .game-container {
+  max-width: 100%;
+}
+
+.code-sample {
+  margin: 1rem 0 0.4rem;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  max-width: 100%;
+  background: #0a140a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #d7f0d7;
+  font-family: "IBM Plex Mono", Consolas, "Courier New", monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.code-sample code {
+  font-family: inherit;
+  white-space: pre;
+}
+
+.artifact-note {
+  margin: 0 0 0.25rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: none;
+}
+
+figure {
+  margin: 0 0 1.25rem;
+}
+
+figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.gallery .responsive {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.project-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 40rem;
+}
+
+.contact-list li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-label {
+  font-family: Outfit, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-image {
+  max-width: min(100%, 520px);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 0.85rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.feature-card {
+  margin: 0;
+}
+
+.feature-card h3 {
+  margin: 0 0 0.4rem;
+  font-family: Outfit, Verdana, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.feature-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.feature-card h3 a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 0.85rem;
+  margin: 0.75rem 0 1.75rem;
+}
+
+.tile-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-card .tile-num {
+  margin: 0 0 0.15rem;
+  font-family: Outfit, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  max-width: none;
+}
+
+.tile-card h2 {
+  margin: 0 0 0.45rem;
+  font-size: 1.08rem;
+}
+
+.tile-card > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.tile-card .cta {
+  margin-bottom: 0;
+}
+
+.tile-card figure {
+  margin: 0.35rem 0 0.85rem;
+}
+
+.tile-card .responsive {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 0.85rem;
+  max-width: none;
+}
+
+.stack span {
+  background: #0a140a;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--accent-strong);
+}
+
+.site-footer {
+  margin-left: calc(var(--nav-width) + 28px);
+  max-width: 920px;
+  padding: 0 28px 40px;
+  border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: none;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+  list-style: none;
+  max-width: none;
+}
+
+.skills li {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--accent-strong);
+}
+
+.tagline {
+  margin: 0 0 1.25rem;
+  font-family: Outfit, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--accent);
+  max-width: none;
+}
+
+#data-quality-checker,
+#web-scraping-pipeline,
+#csv-to-sql-loader,
+#api-data-extractor,
+#incremental-data-loader,
+#sql-reporting-workshop,
+#it-health-report,
+#top-5,
+#ainc-timeline {
+  scroll-margin-top: 1rem;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 720px) {
+
+  /* Top bar stays in document flow so titles are never hidden under it */
+  .sidenav {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-radius: 0;
+    padding: 8px 6px;
+    text-align: center;
+    background: #142814;
+    border-bottom: 2px solid #1f3d1f;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .sidenav a {
+    font-size: 0.82rem;
+    padding: 8px 10px;
+    display: inline-block;
+  }
+
+  .main {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 17px;
+    padding: 16px 16px 48px;
+  }
+
+  .game-container {
+    height: 350px;   /* smaller height for phones */
+    max-width: 100%;
+  }
+
+  .nav-brand {
+    width: 100%;
+    margin: 0 0 4px;
+    padding: 2px 8px 6px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .contact-list li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .site-footer {
+    margin-left: 0;
+    padding: 0 16px 32px;
+  }
+
+  #data-quality-checker,
+  #web-scraping-pipeline,
+  #csv-to-sql-loader,
+  #api-data-extractor,
+  #incremental-data-loader,
+  #sql-reporting-workshop,
+  #it-health-report,
+  #top-5,
+  #ainc-timeline {
+    scroll-margin-top: 8rem;
+  }
+
+  h1 {
+    scroll-margin-top: 8rem;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 600px) {
+  .sidenav a {
+    font-size: 16px;
+    padding: 8px;
+  }
+  .game-container {
+    height: 350px;   /* smaller height for phones */
+    max-width: 100%;
+  }
+  .main {
+    font-size: 17px;
+  }
+}

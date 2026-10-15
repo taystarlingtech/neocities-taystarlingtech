@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Data analysis work by Taylor Starling in Python, SQL, Tableau, and Power BI, including CSV-to-SQL, API extract, quality checks, scraping, and incremental loads."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Data Analysis Projects — Taylor Starling" />
+    <meta
+      property="og:description"
+      content="Python, SQL, Tableau, Power BI, and a small data pipeline: CSV, API, quality, scraping, incremental load."
+    />
+    <meta
+      property="og:url"
+      content="https://taystarlingtech.neocities.org/Data_Analysis_Projects.html"
+    />
+    <meta
+      property="og:image"
+      content="https://taystarlingtech.neocities.org/images/Superstore%20Sales%20Dashboard.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>Data Analysis Projects — Taylor Starling</title>
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/png" href="/images/GreenTea.png" />
+  </head>
+
+  <body>
+    <nav class="sidenav" aria-label="Primary">
+      <p class="nav-brand">Taylor Starling</p>
+      <a href="/index.html">Home</a>
+      <a href="/What_Is_ICT.html">What is ICT?</a>
+      <a href="/Coding_Projects.html">Coding Projects</a>
+      <a href="/Data_Analysis_Projects.html" aria-current="page">Data Analysis Projects</a>
+      <a href="/DevOps_Projects.html">DevOps Projects</a>
+      <a href="/Contact.html">Contact</a>
+    </nav>
+
+    <main class="main">
+      <h1>Data Analysis Projects</h1>
+      <p class="tagline">Reporting, dashboards, and a small Python data pipeline.</p>
+
+      <h2>Python data pipeline</h2>
+      <p>
+        Five scripts that move data from a file or API into a trusted table:
+        load, extract, check, scrape, then load only what changed.
+      </p>
+      <div class="tile-grid">
+        <article class="card tile-card" id="csv-to-sql-loader">
+          <p class="tile-num">01</p>
+          <h2>CSV to SQL loader</h2>
+          <p class="stack">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>SQLAlchemy</span>
+            <span>SQLite</span>
+          </p>
+          <p>
+            Full refresh: explicit CREATE TABLE, then CSV rows into SQLite
+            so types and the primary key are not guessed.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/01%20CSV%20to%20SQL%20Loader">Source</a>
+          </p>
+        </article>
+
+        <article class="card tile-card" id="api-data-extractor">
+          <p class="tile-num">02</p>
+          <h2>API data extractor</h2>
+          <p class="stack">
+            <span>Python</span>
+            <span>Requests</span>
+            <span>JSON</span>
+            <span>Pandas</span>
+          </p>
+          <p>
+            Paginated REST extract: raw JSON saved first, then flattened to
+            CSV, with retries and a timeout.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/02%20API%20Data%20Extractor">Source</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">04</p>
+          <h2>Data quality checker</h2>
+          <p class="stack">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>CSV</span>
+          </p>
+          <p>
+            Pass/fail rules for schema, nulls, duplicates, ranges, and allowed
+            values before a load.
+          </p>
+          <p>
+            <a class="cta" href="#data-quality-checker">Writeup</a>
+            <a class="cta cta-secondary" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/04%20Data%20Quality%20Checker">Source</a>
+          </p>
+        </article>
+
+        <article class="card tile-card">
+          <p class="tile-num">05</p>
+          <h2>Web scraping pipeline</h2>
+          <p class="stack">
+            <span>Python</span>
+            <span>BeautifulSoup</span>
+            <span>Pandas</span>
+          </p>
+          <p>
+            Practice-site quotes into a clean CSV: pagination, delay, then
+            Pandas tidy-up.
+          </p>
+          <p>
+            <a class="cta" href="#web-scraping-pipeline">Writeup</a>
+            <a class="cta cta-secondary" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/05%20Web%20Scraping%20Pipeline">Source</a>
+          </p>
+        </article>
+
+        <article class="card tile-card" id="incremental-data-loader">
+          <p class="tile-num">07</p>
+          <h2>Incremental data loader</h2>
+          <p class="stack">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>SQLAlchemy</span>
+            <span>SQLite</span>
+          </p>
+          <p>
+            Upsert only new and updated orders; skip stale and unchanged rows;
+            store a watermark.
+          </p>
+          <p>
+            <a class="cta" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/07%20Incremental%20Data%20Loader">Source</a>
+          </p>
+        </article>
+      </div>
+
+      <article class="card" id="data-quality-checker">
+        <h2>
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/04%20Data%20Quality%20Checker">Data quality checker</a>
+        </h2>
+        <p class="stack">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>CSV</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Reporting work often starts from messy
+          exports. Before those files feed a dashboard or a SQL load, they
+          need a pass/fail check for schema, nulls, and duplicate rows.
+        </p>
+        <p>
+          <strong>What I did:</strong> Wrote a single Pandas script that loads
+          a sample orders CSV as text, then runs a contract of rules: expected
+          columns and types, required fields, full-row duplicates, duplicate
+          order IDs, quantity greater than zero, and allowed status/product
+          values. Failed checks print Excel-style row numbers so the source
+          file can be opened and fixed.
+        </p>
+        <p>
+          <strong>Outcome:</strong> Against a 10-row sample with planted
+          issues, the checker passed column names and failed the seven
+          remaining rules (types, nulls, duplicates, range, and allowed
+          values). A non-zero exit code marks the run as failed for a
+          scheduled job.
+        </p>
+        <p>
+          <a class="cta" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/04%20Data%20Quality%20Checker">Source</a>
+          <a class="cta cta-secondary" href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/Python/04%20Data%20Quality%20Checker/data_quality_checker.py">Script</a>
+        </p>
+
+        <pre class="code-sample" tabindex="0"><code>[PASS] Schema - column names
+[FAIL] Schema - value types
+[FAIL] Nulls - required fields
+[FAIL] Duplicates - full rows
+[FAIL] Duplicates - business key
+[FAIL] Range - quantity &gt; 0
+[FAIL] Allowed values - status
+[FAIL] Allowed values - product
+
+SUMMARY: 1 passed, 7 failed</code></pre>
+        <p class="artifact-note">
+          Terminal report from the sample file: planted issues in dates, prices,
+          blank customer IDs, duplicate order 1003, negative quantity, and typos
+          like SHIPPD.
+        </p>
+
+        <pre class="code-sample" tabindex="0"><code>EXPECTED_COLUMNS = {
+    "order_id": "int",
+    "customer_id": "string",
+    "order_date": "datetime",
+    "product": "string",
+    "quantity": "int",
+    "unit_price": "float",
+    "status": "string",
+}</code></pre>
+        <p class="artifact-note">
+          The contract at the top of the script: later checks read this instead of
+          scattering rules through if-statements.
+        </p>
+      </article>
+
+      <article class="card" id="web-scraping-pipeline">
+        <h2>
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/05%20Web%20Scraping%20Pipeline">Web scraping pipeline</a>
+        </h2>
+        <p class="stack">
+          <span>Python</span>
+          <span>Requests</span>
+          <span>BeautifulSoup</span>
+          <span>Pandas</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Reporting work does not always start from a
+          spreadsheet. Sometimes the source is HTML. This pipeline pulls quotes
+          from quotes.toscrape.com — a public practice site — and stores them as
+          a clean CSV, using a polite delay and a named User-Agent.
+        </p>
+        <p>
+          <strong>What I did:</strong> Wrote a single script that downloads each
+          page, parses quote / author / tag cards with BeautifulSoup, follows
+          pagination until there is no Next link, then tidies the table with
+          Pandas (strip text, drop duplicate quote-author pairs, sort) and
+          writes UTF-8 CSV that Excel can open.
+        </p>
+        <p>
+          <strong>Outcome:</strong> Ten pages, 100 quotes, one
+          <code>quotes.csv</code> file. Albert Einstein appears most often (10
+          quotes). A <code>MAX_PAGES</code> cap keeps a broken Next link from
+          looping forever.
+        </p>
+        <p>
+          <a class="cta" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/05%20Web%20Scraping%20Pipeline">Source</a>
+          <a class="cta cta-secondary" href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/Python/05%20Web%20Scraping%20Pipeline/web_scraping_pipeline.py">Script</a>
+        </p>
+
+        <pre class="code-sample" tabindex="0"><code>Fetching page 1: https://quotes.toscrape.com/
+  parsed 10 quote(s)
+...
+Fetching page 10: https://quotes.toscrape.com/page/10/
+  parsed 10 quote(s)
+  no Next link - reached the last page
+Raw rows collected: 100
+Wrote 100 row(s) to quotes.csv</code></pre>
+        <p class="artifact-note">
+          Terminal output from the live run: pagination stops when the Next
+          link is missing.
+        </p>
+
+        <pre class="code-sample" tabindex="0"><code>for card in soup.select("div.quote"):
+    text_el = card.select_one("span.text")
+    author_el = card.select_one("small.author")
+    tag_els = card.select("a.tag")</code></pre>
+        <p class="artifact-note">
+          The HTML contract: if those class names change, this is the function
+          that breaks — one reason APIs are usually a safer source than pages.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Tableau dashboards</h2>
+        <p class="stack">
+          <span>Tableau</span>
+          <span>Sample / training data</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Practice and portfolio dashboards built in
+          Tableau (including Superstore-style sample data where noted).
+        </p>
+        <p>
+          <strong>What I did:</strong> Designed views for sales, marketing, and HR
+          overview metrics — charts, filters, and layout for stakeholder scanning.
+        </p>
+        <p>
+          <strong>Outcome:</strong> Static screenshots on this page; interactive
+          embeds are optional via Tableau Public if published later.
+        </p>
+        <div class="gallery">
+          <figure>
+            <img
+              src="/images/tableau-superstore.gif"
+              alt="Animated Superstore Tableau dashboard"
+              class="responsive"
+            />
+            <figcaption>Superstore dashboard (sample data)</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/Digital Marketing Campaign Performance Dashboard.png"
+              alt="Digital marketing campaign performance dashboard"
+              class="responsive"
+            />
+            <figcaption>Digital marketing campaign performance</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/Overview.png"
+              alt="HR overview dashboard"
+              class="responsive"
+            />
+            <figcaption>HR overview</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/Superstore Sales Dashboard.png"
+              alt="Superstore sales dashboard"
+              class="responsive"
+            />
+            <figcaption>Superstore sales (sample data)</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python">Python</a>
+        </h2>
+        <p>
+          Exploratory analysis and Excel automation with Pandas and NumPy.
+          Pipeline scripts 01, 02, 04, 05, and 07 are in the tile row above.
+          Highlighted notebooks below; more scripts live in the
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python">Python folder</a>.
+        </p>
+
+        <ul class="project-list">
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/Python/Stock%20Market%20Case%20Study/Stock%20Market%20Case%20Study.ipynb">Stock Market Case Study</a>
+            — Jupyter notebook analyzing market data (also available as
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/Python/Stock%20Market%20Case%20Study/Stock%20Market%20Case%20Study.html">rendered HTML</a>).
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/Python/Youtube_case_study/Youtube_Data_Analysis.ipynb">YouTube Data Analysis</a>
+            — case study notebook on channel / video metrics (
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/Python/Youtube_case_study/Youtube_Data_Analysis.html">rendered HTML</a>).
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/Python/Pandas%20Numpy%20Excel%20join%20Comparison%20Report.py">Excel join comparison report</a>
+            — loads multiple workbooks, merges on shared keys with Pandas, and writes a reconciled Excel file.
+          </li>
+        </ul>
+
+        <pre class="code-sample" tabindex="0"><code># Merge security-report users with employee titles, then match estimated review items
+id_match = pd.merge(user_name, titles_names, on="User ID", how="left")
+no_pos_num = pd.merge(id_match, estimated_items, on="Position Number", how="left")
+no_pos_num.to_excel("Authorized Infinium Users2.xlsx")</code></pre>
+        <p class="artifact-note">
+          From the Excel comparison script: left joins across three sheets, then export.
+        </p>
+      </article>
+
+      <article class="card" id="sql-reporting-workshop">
+        <h2>
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/SQL/Runnable%20Reporting%20Workshop">SQL reporting workshop</a>
+        </h2>
+        <p class="stack">
+          <span>SQL</span>
+          <span>SQLite</span>
+          <span>Python</span>
+        </p>
+        <p>
+          <strong>Context:</strong> Production Infinium queries below are the
+          real reporting work, but a reviewer cannot connect to that database.
+          This workshop is a runnable stand-in with readable names.
+        </p>
+        <p>
+          <strong>What I did:</strong> Built a 12-row employee table and queries
+          for an org-chart self-join, a CTE headcount, window-function tenure
+          ranks, CASE dept labels, and a terminated-still-reporting exception
+          list. A small Python runner creates <code>hr.db</code> and prints
+          each result.
+        </p>
+        <p>
+          <strong>Outcome:</strong> Same patterns as the SSMS extracts
+          (<code>job_family &lt;&gt; 'DRV'</code> for <code>PRSEC &lt;&gt; 'DRV'</code>),
+          in SQL anyone can execute.
+        </p>
+        <p>
+          <a class="cta" href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/SQL/Runnable%20Reporting%20Workshop">Source</a>
+        </p>
+        <pre class="code-sample" tabindex="0"><code>SELECT
+    e.employee_id,
+    e.name,
+    e.dept_code AS dept,
+    e.title,
+    s.name AS reports_to
+FROM employees AS e
+LEFT JOIN employees AS s
+    ON e.supervisor_id = s.employee_id
+WHERE e.status = 'Active'
+  AND e.job_family &lt;&gt; 'DRV'
+ORDER BY e.name;</code></pre>
+        <p class="artifact-note">
+          From 02_org_chart.sql: employee self-join for supervisor name, the
+          same shape as the Infinium ops org chart query.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/SQL">SQL</a>
+        </h2>
+        <p>
+          Production-style reporting in SQL Server Management Studio (SSMS):
+          multi-table joins, CASE logic, and filters for HR / ops exports.
+          Sample queries are in the
+          <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/SQL">SQL folder</a>.
+        </p>
+
+        <ul class="project-list">
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/SQL/Ops%20Org%20Chart%20Query.sql">Ops org chart query</a>
+            — employee master + position + supervisor joins for a reporting hierarchy.
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/SQL/Report%20Builder%20Query%20v2.sql">Report Builder query (v2)</a>
+            — larger export with role mapping, payroll groups, and nested lookups.
+          </li>
+          <li>
+            <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/blob/main/SQL/EEO%20Open%20Location%20List.sql">EEO open location list</a>
+            and other department-specific report extracts.
+          </li>
+        </ul>
+
+        <pre class="code-sample" tabindex="0"><code>SELECT DISTINCT
+  RIGHT(PRPMS.PREN, 6) AS EmployeeID,
+  PRPMS.PRCKNM AS Name,
+  PRPMS.PRL03 AS Dept,
+  PRPMS.PRTITL AS Title,
+  PRPMS_1.PRCKNM AS Reports_to
+FROM psa.dbo.SMFD35_HRDBFA_PRPMS PRPMS (NOLOCK)
+LEFT JOIN psa.dbo.SMFD35_HRDBFA_PEPOG PEPOG
+  ON PRPMS.PRER = PEPOG.OGER AND PRPMS.PRPOS = PEPOG.OGPOS
+LEFT JOIN psa.dbo.SMFD35_HRDBFA_PRPSP PRPSP (NOLOCK)
+  ON PRPMS.PRER = PRPSP.SPER AND PRPMS.PREN = PRPSP.SPEN
+LEFT JOIN psa.dbo.SMFD35_HRDBFA_PRPMS PRPMS_1 (NOLOCK)
+  ON PRPSP.SPSPER = PRPMS_1.PRER AND PRPSP.SPSPEN = PRPMS_1.PREN
+WHERE PRPMS.PRL01 = '001'
+  AND PRPMS.PRL02 = 'XTT'
+  AND PRPMS.PRTEDH = '0'
+  AND PRPMS.PRSEC &lt;&gt; 'DRV'
+ORDER BY PRPMS.PRCKNM ASC;</code></pre>
+        <p class="artifact-note">
+          Excerpt from the ops org chart query: supervisor self-join pattern used for hierarchy reports.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Power BI</h2>
+        <p>Desktop dashboard screenshot (interactive embed needs Power BI service publish-to-web).</p>
+        <figure>
+          <img
+            src="/images/powerbi-dashboard.png"
+            alt="Power BI dashboard"
+            class="responsive"
+          />
+          <figcaption>Power BI dashboard</figcaption>
+        </figure>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Taylor Starling ·
+        <a href="https://github.com/taystarlingtech">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/taystarlingtech">LinkedIn</a> ·
+        <a href="/Contact.html">Contact</a>
+      </p>
+    </footer>
+  </body>
+</html>
