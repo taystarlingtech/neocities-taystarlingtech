@@ -30,15 +30,17 @@
   </head>
 
   <body>
-    <nav class="sidenav" aria-label="Primary">
-      <p class="nav-brand">Taylor Starling</p>
-      <a href="/index.html">Home</a>
-      <a href="/What_Is_ICT.html">What is ICT?</a>
-      <a href="/Coding_Projects.html">Coding Projects</a>
-      <a href="/Data_Analysis_Projects.html" aria-current="page">Data Analysis Projects</a>
-      <a href="/DevOps_Projects.html">DevOps Projects</a>
-      <a href="/Contact.html">Contact</a>
-    </nav>
+    <header class="site-header">
+      <a class="nav-brand" href="/index.html">Taylor Starling</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/What_Is_ICT.html">What is ICT?</a>
+        <a href="/Coding_Projects.html">Coding Projects</a>
+        <a href="/Data_Analysis_Projects.html" aria-current="page">Data Analysis Projects</a>
+        <a href="/DevOps_Projects.html">DevOps Projects</a>
+        <a href="/Contact.html">Contact</a>
+      </nav>
+    </header>
 
     <main class="main">
       <h1>Data Analysis Projects</h1>
@@ -50,7 +52,7 @@
         load, extract, check, scrape, then load only what changed.
       </p>
       <div class="tile-grid">
-        <article class="card tile-card" id="csv-to-sql-loader">
+        <article class="card tile-card reveal" id="csv-to-sql-loader">
           <p class="tile-num">01</p>
           <h2>CSV to SQL loader</h2>
           <p class="stack">
@@ -68,7 +70,7 @@
           </p>
         </article>
 
-        <article class="card tile-card" id="api-data-extractor">
+        <article class="card tile-card reveal" id="api-data-extractor">
           <p class="tile-num">02</p>
           <h2>API data extractor</h2>
           <p class="stack">
@@ -86,7 +88,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">04</p>
           <h2>Data quality checker</h2>
           <p class="stack">
@@ -104,7 +106,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">05</p>
           <h2>Web scraping pipeline</h2>
           <p class="stack">
@@ -122,7 +124,7 @@
           </p>
         </article>
 
-        <article class="card tile-card" id="incremental-data-loader">
+        <article class="card tile-card reveal" id="incremental-data-loader">
           <p class="tile-num">07</p>
           <h2>Incremental data loader</h2>
           <p class="stack">
@@ -141,7 +143,7 @@
         </article>
       </div>
 
-      <article class="card" id="data-quality-checker">
+      <article class="card reveal" id="data-quality-checker">
         <h2>
           <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/04%20Data%20Quality%20Checker">Data quality checker</a>
         </h2>
@@ -206,7 +208,7 @@ SUMMARY: 1 passed, 7 failed</code></pre>
         </p>
       </article>
 
-      <article class="card" id="web-scraping-pipeline">
+      <article class="card reveal" id="web-scraping-pipeline">
         <h2>
           <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python/05%20Web%20Scraping%20Pipeline">Web scraping pipeline</a>
         </h2>
@@ -263,7 +265,7 @@ Wrote 100 row(s) to quotes.csv</code></pre>
         </p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
         <h2>Tableau dashboards</h2>
         <p class="stack">
           <span>Tableau</span>
@@ -317,7 +319,7 @@ Wrote 100 row(s) to quotes.csv</code></pre>
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
         <h2>
           <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/Python">Python</a>
         </h2>
@@ -354,7 +356,7 @@ no_pos_num.to_excel("Authorized Infinium Users2.xlsx")</code></pre>
         </p>
       </article>
 
-      <article class="card" id="sql-reporting-workshop">
+      <article class="card reveal" id="sql-reporting-workshop">
         <h2>
           <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/SQL/Runnable%20Reporting%20Workshop">SQL reporting workshop</a>
         </h2>
@@ -401,7 +403,7 @@ ORDER BY e.name;</code></pre>
         </p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
         <h2>
           <a href="https://github.com/taystarlingtech/Coding-Practice-Examples/tree/main/SQL">SQL</a>
         </h2>
@@ -450,7 +452,7 @@ ORDER BY PRPMS.PRCKNM ASC;</code></pre>
         </p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
         <h2>Power BI</h2>
         <p>Desktop dashboard screenshot (interactive embed needs Power BI service publish-to-web).</p>
         <div class="gallery">
@@ -482,5 +484,6 @@ ORDER BY PRPMS.PRCKNM ASC;</code></pre>
         <a href="/Contact.html">Contact</a>
       </p>
     </footer>
+    <script src="/site.js" defer></script>
   </body>
 </html>

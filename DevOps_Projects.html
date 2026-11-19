@@ -30,15 +30,17 @@
   </head>
 
   <body>
-    <nav class="sidenav" aria-label="Primary">
-      <p class="nav-brand">Taylor Starling</p>
-      <a href="/index.html">Home</a>
-      <a href="/What_Is_ICT.html">What is ICT?</a>
-      <a href="/Coding_Projects.html">Coding Projects</a>
-      <a href="/Data_Analysis_Projects.html">Data Analysis Projects</a>
-      <a href="/DevOps_Projects.html" aria-current="page">DevOps Projects</a>
-      <a href="/Contact.html">Contact</a>
-    </nav>
+    <header class="site-header">
+      <a class="nav-brand" href="/index.html">Taylor Starling</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/What_Is_ICT.html">What is ICT?</a>
+        <a href="/Coding_Projects.html">Coding Projects</a>
+        <a href="/Data_Analysis_Projects.html">Data Analysis Projects</a>
+        <a href="/DevOps_Projects.html" aria-current="page">DevOps Projects</a>
+        <a href="/Contact.html">Contact</a>
+      </nav>
+    </header>
 
     <main class="main">
       <h1>DevOps Projects</h1>
@@ -51,7 +53,7 @@
       </p>
 
       <div class="tile-grid">
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">01</p>
           <h2>Jenkins HA on AWS</h2>
           <p class="stack">
@@ -70,7 +72,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">02</p>
           <h2>Consul service discovery</h2>
           <p class="stack">
@@ -89,7 +91,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">03</p>
           <h2>Scalable Java app on AWS</h2>
           <p class="stack">
@@ -108,7 +110,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">04</p>
           <h2>Prometheus stack</h2>
           <p class="stack">
@@ -127,7 +129,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">05</p>
           <h2>AWS VPC design &amp; Terraform</h2>
           <p class="stack">
@@ -146,7 +148,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">06</p>
           <h2>AWS Client VPN</h2>
           <p class="stack">
@@ -164,7 +166,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">07</p>
           <h2>Pritunl VPN</h2>
           <p class="stack">
@@ -182,7 +184,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">08</p>
           <h2>Fargate app deployment</h2>
           <p class="stack">
@@ -200,7 +202,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">09</p>
           <h2>GitHub Actions OIDC → AWS</h2>
           <p class="stack">
@@ -218,7 +220,7 @@
           </p>
         </article>
 
-        <article class="card tile-card">
+        <article class="card tile-card reveal">
           <p class="tile-num">10</p>
           <h2>Route 53 private hosted zone</h2>
           <p class="stack">
@@ -258,5 +260,6 @@
         <a href="/Contact.html">Contact</a>
       </p>
     </footer>
+    <script src="/site.js" defer></script>
   </body>
 </html>
