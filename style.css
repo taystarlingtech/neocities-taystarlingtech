@@ -232,6 +232,19 @@ figure a:hover .responsive {
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid var(--border);
+  background:
+    radial-gradient(500px 280px at 50% 40%, rgba(46, 110, 46, 0.28), transparent 65%),
+    #071007;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.game-container.is-playing {
+  display: block;
+  background: #071007;
 }
 
 .game-container iframe {
@@ -242,6 +255,41 @@ figure a:hover .responsive {
   height: 100%;
   border: none;
   display: block;
+}
+
+.game-play-btn {
+  appearance: none;
+  cursor: pointer;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+  background: var(--bg-hover);
+  color: var(--accent-strong);
+  font-family: Outfit, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition:
+    background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    transform 0.18s var(--ease);
+}
+
+.game-play-btn:hover,
+.game-play-btn:focus-visible {
+  color: #fff;
+  background: #234723;
+  border-color: var(--accent);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.game-play-note {
+  margin: 0;
+  max-width: 28ch;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 .card {

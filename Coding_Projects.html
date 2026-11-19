@@ -25,7 +25,7 @@
 
     <title>Coding Projects — Taylor Starling</title>
 
-    <link href="/style.css?v=20261119" rel="stylesheet" type="text/css" media="all" />
+    <link href="/style.css?v=20261119b" rel="stylesheet" type="text/css" media="all" />
     <link rel="icon" type="image/png" href="/images/GreenTea.png" />
   </head>
 
@@ -243,16 +243,15 @@
           <a class="cta cta-secondary" href="https://itch.io/embed-upload/17731059?color=333333">Play embed</a>
         </p>
 
-        <div class="game-container">
-          <iframe
-            src="https://itch.io/embed-upload/17731059?color=333333"
-            title="A Midsummer Night’s Dream — playable embed"
-            allow="fullscreen; autoplay; encrypted-media"
-            allowfullscreen
-            loading="eager"
-            width="100%"
-            height="100%">
-          </iframe>
+        <div
+          class="game-container"
+          data-embed-src="https://itch.io/embed-upload/17731059?color=333333"
+          data-embed-title="A Midsummer Night’s Dream — playable embed"
+        >
+          <button type="button" class="game-play-btn">
+            Play game
+          </button>
+          <p class="game-play-note">Click to load the itch.io embed (it will not auto-play).</p>
         </div>
       </article>
 
@@ -362,6 +361,6 @@
         <a href="/Contact.html">Contact</a>
       </p>
     </footer>
-    <script src="/site.js?v=20261119" defer></script>
+    <script src="/site.js?v=20261119b" defer></script>
   </body>
 </html>

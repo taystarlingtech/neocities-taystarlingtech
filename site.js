@@ -75,9 +75,34 @@
     });
   }
 
+  function setupClickToPlayEmbeds() {
+    document.querySelectorAll(".game-container[data-embed-src]").forEach(function (container) {
+      var button = container.querySelector(".game-play-btn");
+      if (!button) return;
+
+      button.addEventListener("click", function () {
+        if (container.classList.contains("is-playing")) return;
+
+        var iframe = document.createElement("iframe");
+        iframe.src = container.getAttribute("data-embed-src");
+        iframe.title = container.getAttribute("data-embed-title") || "Playable embed";
+        iframe.setAttribute("allow", "fullscreen; encrypted-media");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("loading", "lazy");
+        iframe.width = "100%";
+        iframe.height = "100%";
+
+        container.innerHTML = "";
+        container.classList.add("is-playing");
+        container.appendChild(iframe);
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     revealOnScroll();
     makeFeatureCardsClickable();
     markExternalLinks();
+    setupClickToPlayEmbeds();
   });
 })();
